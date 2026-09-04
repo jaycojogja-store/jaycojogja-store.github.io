@@ -1,66 +1,254 @@
-index.html
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Jayco Jogja Store</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            text-align: center;
-        }
-
-        header {
-            background: #111;
-            color: white;
-            padding: 60px 20px;
-        }
-
-        h1 {
-            font-size: 42px;
-            margin: 0 0 15px;
-        }
-
-        p {
-            font-size: 18px;
-        }
-
-        .content {
-            padding: 50px 20px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 14px 25px;
-            background: #111;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jayco Jogja Store - Produk berkualitas, harga bersaing, pelayanan terbaik.">
+  <title>Jayco Jogja Store</title>
+  <style>
+    :root{
+      --red:#ed111b; --red2:#ff2a32; --black:#070707; --black2:#111;
+      --white:#fff; --gray:#b8b8b8; --line:#262626;
+      --max:1180px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--black);color:var(--white);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max),92%);margin:auto}
+    .topbar{background:var(--red);font-size:13px;text-align:center;padding:7px 15px;font-weight:700}
+    header{position:sticky;top:0;z-index:100;background:rgba(7,7,7,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.5px}
+    .brand-mark{width:42px;height:42px;background:var(--red);clip-path:polygon(28% 0,100% 0,77% 100%,0 100%);display:grid;place-items:center;font-size:25px;font-style:italic}
+    .brand small{display:block;color:#ff4a4f;font-size:11px;letter-spacing:1.8px}
+    .brand strong{font-size:21px;line-height:1}
+    .menu{display:flex;gap:28px;font-size:13px;font-weight:800}
+    .menu a:hover{color:var(--red2)}
+    .nav-cta{background:var(--red);padding:11px 16px;border-radius:8px;font-size:13px;font-weight:900}
+    .hamb{display:none;background:none;border:0;color:#fff;font-size:28px}
+    .hero{position:relative;overflow:hidden;background:
+      radial-gradient(circle at 78% 45%,rgba(237,17,27,.25),transparent 30%),
+      linear-gradient(120deg,#050505 0%,#0c0c0c 55%,#160306 100%);min-height:690px;display:flex;align-items:center}
+    .hero:before,.hero:after{content:"";position:absolute;inset:auto -10% 0 auto;width:55%;height:100%;background:linear-gradient(130deg,transparent 35%,rgba(237,17,27,.8) 36%,transparent 43%,transparent 55%,rgba(237,17,27,.35) 56%,transparent 64%);transform:skewX(-18deg);opacity:.55}
+    .hero:after{transform:skewX(-18deg) translateX(80px);opacity:.2}
+    .hero-content{position:relative;z-index:2;width:58%;padding:80px 0}
+    .eyebrow{color:#ff333a;font-weight:900;letter-spacing:3px;font-size:13px;margin-bottom:12px}
+    h1{font-size:clamp(48px,7vw,86px);line-height:.94;letter-spacing:-3px;text-transform:uppercase}
+    h1 span{color:var(--red)}
+    .hero p{color:#d1d1d1;max-width:600px;font-size:19px;margin:24px 0 30px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 22px;border-radius:8px;font-weight:900;border:1px solid #444}
+    .btn-red{background:var(--red);border-color:var(--red)}
+    .btn-dark{background:#0c0c0c}
+    .hero-card{position:absolute;z-index:2;right:6%;width:370px;height:370px;border-radius:28px;border:1px solid #3a3a3a;background:linear-gradient(145deg,#151515,#050505);box-shadow:0 30px 90px rgba(0,0,0,.7);display:grid;place-items:center}
+    .hero-card .jc{font-size:150px;font-weight:1000;font-style:italic;color:var(--red);text-shadow:12px 12px 0 #fff}
+    .hero-card p{position:absolute;bottom:45px;color:#fff;font-size:23px;font-weight:900;letter-spacing:2px}
+    section{padding:85px 0}
+    .light{background:#fff;color:#111}
+    .section-head{text-align:center;margin-bottom:45px}
+    .section-head .eyebrow{margin-bottom:5px}
+    .section-head h2{font-size:38px;line-height:1.1;text-transform:uppercase}
+    .section-head h2:after{content:"";display:block;width:60px;height:4px;background:var(--red);margin:14px auto 0}
+    .section-head p{color:#777;max-width:650px;margin:13px auto 0}
+    .categories{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    .cat{position:relative;min-height:190px;border-radius:14px;overflow:hidden;padding:25px;background:linear-gradient(145deg,#242424,#070707);color:#fff;border:1px solid #333;display:flex;flex-direction:column;justify-content:flex-end}
+    .cat:before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,transparent 30%,rgba(237,17,27,.28));}
+    .cat>*{position:relative}
+    .cat-icon{font-size:42px;margin-bottom:auto}
+    .cat h3{font-size:19px;text-transform:uppercase}
+    .cat span{display:inline-block;background:var(--red);padding:7px 10px;border-radius:6px;font-size:11px;font-weight:900;width:max-content;margin-top:10px}
+    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .product{background:#fff;border:1px solid #e7e7e7;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.06)}
+    .product-img{height:190px;background:linear-gradient(145deg,#1a1a1a,#050505);display:grid;place-items:center;font-size:68px}
+    .product-body{padding:20px}
+    .tag{font-size:10px;color:var(--red);font-weight:900;letter-spacing:1px}
+    .product h3{font-size:18px;margin:5px 0}
+    .product p{font-size:13px;color:#777}
+    .price{font-size:19px;font-weight:900;margin:12px 0;color:#111}
+    .product .btn{width:100%;font-size:12px;padding:11px}
+    .dark{background:#090909}
+    .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid #252525;border-radius:18px;overflow:hidden}
+    .benefit{padding:35px 25px;text-align:center;border-right:1px solid #252525}
+    .benefit:last-child{border:0}
+    .benefit .ico{font-size:38px;color:var(--red)}
+    .benefit h3{font-size:16px;margin:12px 0 5px}
+    .benefit p{font-size:13px;color:#999}
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .review{background:#fff;border:1px solid #e8e8e8;padding:28px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,.06)}
+    .stars{color:var(--red);letter-spacing:3px;font-size:15px}
+    .review p{color:#444;margin:12px 0}
+    .review strong{font-size:13px}
+    .cta{padding:48px 0;background:linear-gradient(120deg,#0b0b0b,#190304);border-top:1px solid #2c2c2c;border-bottom:1px solid #2c2c2c}
+    .cta-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .cta h2{font-size:35px;text-transform:uppercase}
+    .cta h2 span{color:var(--red)}
+    .cta p{color:#aaa;margin-top:5px}
+    footer{background:#050505;padding:55px 0 0}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:40px;padding-bottom:40px}
+    footer h3{font-size:14px;text-transform:uppercase;margin-bottom:15px}
+    footer p,footer li{font-size:13px;color:#888}
+    footer ul{list-style:none;display:grid;gap:8px}
+    .social{display:flex;gap:10px;margin-top:18px}
+    .social a{width:35px;height:35px;border:1px solid #333;border-radius:50%;display:grid;place-items:center;font-weight:900}
+    .contact-line{display:flex;gap:10px;margin:9px 0}
+    .bottom{border-top:1px solid #222;text-align:center;color:#666;font-size:12px;padding:18px}
+    @media(max-width:900px){
+      .menu{display:none}.nav-cta{display:none}.hamb{display:block}
+      .hero-content{width:100%}.hero-card{opacity:.18;right:-90px}
+      .categories{grid-template-columns:repeat(2,1fr)}.products{grid-template-columns:repeat(2,1fr)}
+      .benefits{grid-template-columns:repeat(2,1fr)}.benefit:nth-child(2){border-right:0}.benefit:nth-child(-n+2){border-bottom:1px solid #252525}
+      .testimonials{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:560px){
+      .topbar{font-size:11px}.nav{height:65px}.brand strong{font-size:17px}
+      .hero{min-height:610px}.hero-content{padding:65px 0}.hero p{font-size:16px}
+      h1{font-size:50px;letter-spacing:-2px}.hero-card{width:270px;height:270px;right:-120px}
+      .categories,.products,.benefits,.footer-grid{grid-template-columns:1fr}
+      .benefit{border-right:0!important;border-bottom:1px solid #252525!important}.benefit:last-child{border-bottom:0!important}
+      section{padding:65px 0}.section-head h2{font-size:30px}
+      .cta-inner{flex-direction:column;align-items:flex-start}.cta h2{font-size:28px}
+    }
+  </style>
 </head>
-
 <body>
 
-    <header>
-        <h1>Jayco Jogja Store</h1>
-        <p>Selamat datang di website kami</p>
-    </header>
+  <div class="topbar">🔥 JAYCO JOGJA STORE — PRODUK BERKUALITAS • HARGA BERSAING • PELAYANAN TERBAIK</div>
 
-    <div class="content">
-        <h2>Website Resmi Jayco Jogja Store</h2>
-        <p>Informasi produk dan layanan kami.</p>
-
-        <a class="button" href="https://www.instagram.com/">
-            Instagram
-        </a>
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand">
+        <div class="brand-mark">J</div>
+        <div><strong>JAYCO</strong><small>JOGJA STORE</small></div>
+      </a>
+      <nav class="menu">
+        <a href="#home">BERANDA</a>
+        <a href="#kategori">KATEGORI</a>
+        <a href="#produk">PRODUK</a>
+        <a href="#tentang">TENTANG</a>
+        <a href="#testimoni">TESTIMONI</a>
+        <a href="#kontak">KONTAK</a>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/6281334748004" target="_blank">💬 CHAT WHATSAPP</a>
+      <button class="hamb" aria-label="Menu">☰</button>
     </div>
+  </header>
 
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">TOKO ONLINE • YOGYAKARTA</div>
+          <h1>JAYCO<br><span>JOGJA STORE</span></h1>
+          <p>Temukan produk berkualitas dengan harga bersaing dan pelayanan terbaik. Belanja lebih mudah, cepat, dan nyaman.</p>
+          <div class="buttons">
+            <a class="btn btn-red" href="#produk">🛍️ LIHAT PRODUK</a>
+            <a class="btn btn-dark" href="https://wa.me/6281334748004" target="_blank">💬 CHAT WHATSAPP</a>
+          </div>
+        </div>
+        <div class="hero-card"><div class="jc">J</div><p>JAYCO JOGJA STORE</p></div>
+      </div>
+    </section>
+
+    <section class="light" id="kategori">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">PILIH SESUAI KEBUTUHAN</div>
+          <h2>Kategori Produk</h2>
+          <p>Berbagai pilihan produk untuk kebutuhan harian, gadget, aksesori, gaming, dan lainnya.</p>
+        </div>
+        <div class="categories">
+          <a class="cat" href="#produk"><div class="cat-icon">🎧</div><h3>Audio</h3><span>Lihat Produk →</span></a>
+          <a class="cat" href="#produk"><div class="cat-icon">📱</div><h3>Aksesori HP</h3><span>Lihat Produk →</span></a>
+          <a class="cat" href="#produk"><div class="cat-icon">⚡</div><h3>Gadget</h3><span>Lihat Produk →</span></a>
+          <a class="cat" href="#produk"><div class="cat-icon">🎮</div><h3>Gaming</h3><span>Lihat Produk →</span></a>
+          <a class="cat" href="#produk"><div class="cat-icon">•••</div><h3>Lainnya</h3><span>Lihat Produk →</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="light" id="produk" style="padding-top:20px">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">PRODUK PILIHAN</div>
+          <h2>Produk Terlaris</h2>
+          <p>Contoh katalog. Ganti nama, foto, harga, dan deskripsi sesuai produk asli kamu.</p>
+        </div>
+        <div class="products">
+          <article class="product"><div class="product-img">🎧</div><div class="product-body"><div class="tag">AUDIO</div><h3>Headset Premium</h3><p>Suara jernih untuk musik, meeting, dan hiburan.</p><div class="price">Rp 299.000</div><a class="btn btn-red" href="https://wa.me/6281334748004?text=Halo%20Jayco%20Jogja%20Store,%20saya%20tertarik%20Headset%20Premium" target="_blank">PESAN SEKARANG</a></div></article>
+          <article class="product"><div class="product-img">🔌</div><div class="product-body"><div class="tag">AKSESORI</div><h3>Fast Charger</h3><p>Pengisian cepat dan praktis untuk perangkat kamu.</p><div class="price">Rp 149.000</div><a class="btn btn-red" href="https://wa.me/6281334748004?text=Halo%20Jayco%20Jogja%20Store,%20saya%20tertarik%20Fast%20Charger" target="_blank">PESAN SEKARANG</a></div></article>
+          <article class="product"><div class="product-img">⌨️</div><div class="product-body"><div class="tag">GAMING</div><h3>Gaming Keyboard</h3><p>Responsif, nyaman, dan siap menemani sesi gaming.</p><div class="price">Rp 399.000</div><a class="btn btn-red" href="https://wa.me/6281334748004?text=Halo%20Jayco%20Jogja%20Store,%20saya%20tertarik%20Gaming%20Keyboard" target="_blank">PESAN SEKARANG</a></div></article>
+          <article class="product"><div class="product-img">📦</div><div class="product-body"><div class="tag">BEST SELLER</div><h3>Produk Pilihan</h3><p>Produk unggulan Jayco Jogja Store untuk kamu.</p><div class="price">Hubungi Kami</div><a class="btn btn-red" href="https://wa.me/6281334748004?text=Halo%20Jayco%20Jogja%20Store,%20saya%20ingin%20tanya%20produk" target="_blank">TANYA SEKARANG</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark" id="tentang">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">KENAPA JAYCO?</div>
+          <h2>Keunggulan Kami</h2>
+        </div>
+        <div class="benefits">
+          <div class="benefit"><div class="ico">🛡️</div><h3>PRODUK BERKUALITAS</h3><p>Produk pilihan dengan kualitas yang kami prioritaskan.</p></div>
+          <div class="benefit"><div class="ico">🏷️</div><h3>HARGA BERSAING</h3><p>Harga terbaik dan bersaing di kelasnya.</p></div>
+          <div class="benefit"><div class="ico">🚚</div><h3>PENGIRIMAN CEPAT</h3><p>Pengiriman aman ke berbagai wilayah Indonesia.</p></div>
+          <div class="benefit"><div class="ico">🎧</div><h3>PELAYANAN TERBAIK</h3><p>Siap membantu kebutuhan pelanggan dengan ramah.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="light" id="testimoni">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">KATA PELANGGAN</div>
+          <h2>Testimoni Customer</h2>
+        </div>
+        <div class="testimonials">
+          <div class="review"><div class="stars">★★★★★</div><p>“Produk original, pengiriman cepat, dan pelayanan ramah. Recommended!”</p><strong>— Dimas A.</strong><br><small>Yogyakarta</small></div>
+          <div class="review"><div class="stars">★★★★★</div><p>“Harga terjangkau, kualitas mantap. Jayco Jogja Store terbaik.”</p><strong>— Riska W.</strong><br><small>Sleman</small></div>
+          <div class="review"><div class="stars">★★★★★</div><p>“Sudah langganan di sini, selalu puas dengan pelayanannya.”</p><strong>— Bagas P.</strong><br><small>Bantul</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div><h2>TUNGGU APA LAGI?<br><span>YUK BELANJA SEKARANG!</span></h2><p>Hubungi Jayco Jogja Store melalui WhatsApp.</p></div>
+        <a class="btn btn-red" href="https://wa.me/6281334748004" target="_blank">💬 CHAT WHATSAPP SEKARANG</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="kontak">
+    <div class="container footer-grid">
+      <div>
+        <a href="#" class="brand"><div class="brand-mark">J</div><div><strong>JAYCO</strong><small>JOGJA STORE</small></div></a>
+        <p style="margin-top:18px">Toko online terpercaya untuk kebutuhan gadget, aksesori, dan berbagai produk berkualitas.</p>
+        <div class="social"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="TikTok">♪</a></div>
+      </div>
+      <div><h3>Informasi</h3><ul><li><a href="#tentang">Tentang Kami</a></li><li><a href="#produk">Produk</a></li><li><a href="#kontak">Cara Belanja</a></li><li><a href="#kontak">Kebijakan Toko</a></li></ul></div>
+      <div><h3>Layanan</h3><ul><li><a href="https://wa.me/6281334748004">Chat WhatsApp</a></li><li>Tracking Order</li><li>Garansi Produk</li><li>Retur & Refund</li></ul></div>
+      <div><h3>Kontak Kami</h3><div class="contact-line">📱 <span>08XX-XXXX-XXXX</span></div><div class="contact-line">📷 <span>@jaycojogja.store</span></div><div class="contact-line">📍 <span>Yogyakarta, Indonesia</span></div><div class="contact-line">✉️ <span>jaycojogja.store@gmail.com</span></div></div>
+    </div>
+    <div class="bottom">© 2026 Jayco Jogja Store. All Rights Reserved.</div>
+  </footer>
+
+  <script>
+    // Ganti nomor WhatsApp, Instagram, email, produk, dan harga pada HTML sesuai data asli.
+    document.querySelector('.hamb').addEventListener('click', function(){
+      const menu=document.querySelector('.menu');
+      const visible=getComputedStyle(menu).display !== 'none';
+      menu.style.display=visible?'none':'flex';
+      menu.style.position='absolute';
+      menu.style.top='65px';
+      menu.style.left='0';
+      menu.style.right='0';
+      menu.style.padding='20px';
+      menu.style.background='#080808';
+      menu.style.flexDirection='column';
+      menu.style.gap='16px';
+    });
+  </script>
 </body>
 </html>
