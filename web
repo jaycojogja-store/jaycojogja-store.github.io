@@ -1,0 +1,66 @@
+index.html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jayco Jogja Store</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin: 0 0 15px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .content {
+            padding: 50px 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 25px;
+            background: #111;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Jayco Jogja Store</h1>
+        <p>Selamat datang di website kami</p>
+    </header>
+
+    <div class="content">
+        <h2>Website Resmi Jayco Jogja Store</h2>
+        <p>Informasi produk dan layanan kami.</p>
+
+        <a class="button" href="https://www.instagram.com/">
+            Instagram
+        </a>
+    </div>
+
+</body>
+</html>
