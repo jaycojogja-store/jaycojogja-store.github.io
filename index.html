@@ -326,20 +326,20 @@ footer ul{list-style:none;display:grid;gap:8px}
         <p>“Tidak harus cepat. Yang penting terus berjalan.”</p>
         <div class="price">Rp 99.000</div>
         <a class="btn btn-ivory" href="https://wa.me/6281334748004?text=Halo%20Jayco%20Jogja%20Store,%20saya%20tertarik%20Kaos%20Jangan%20Takut%20Berjalan." target="_blank">PESAN VIA WA</a>
-        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('images/kaos-01.jpg','Jangan Takut Berjalan','Rp 99.000','Tidak harus cepat. Yang penting terus berjalan.')">LIHAT DETAIL</button>
+        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('kaos-01.jpg','Jangan Takut Berjalan','Rp 99.000','Tidak harus cepat. Yang penting terus berjalan.')">LIHAT DETAIL</button>
       </div>
     </article>
 
     <!-- PRODUK 2: ganti images/kaos-02.jpg -->
     <article class="product">
-      <div class="product-img"><img src="images/kaos-02.jpg" alt="Kaos Tetap Bertumbuh" onerror="this.src='https://placehold.co/700x700/F3E8C8/111111?text=KAOS+02'"></div>
+      <div class="product-img"><img src="kaos-02.jpg" alt="Kaos Tetap Bertumbuh" onerror="this.src='https://placehold.co/700x700/F3E8C8/111111?text=KAOS+02'"></div>
       <div class="product-body">
         <div class="tag">JAYCO 02 • PUTIH</div>
         <h3>Tetap Bertumbuh</h3>
         <p>“Pelan bukan berarti berhenti.”</p>
         <div class="price">Rp 99.000</div>
         <a class="btn btn-ivory" href="https://wa.me/6281334748004?text=Halo%20Jayco%20Jogja%20Store,%20saya%20tertarik%20Kaos%20Tetap%20Bertumbuh." target="_blank">PESAN VIA WA</a>
-        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('images/kaos-02.jpg','Tetap Bertumbuh','Rp 99.000','Pelan bukan berarti berhenti.')">LIHAT DETAIL</button>
+        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('kaos-02.jpg','Tetap Bertumbuh','Rp 99.000','Pelan bukan berarti berhenti.')">LIHAT DETAIL</button>
       </div>
     </article>
 
@@ -540,7 +540,7 @@ function openProduct(image,title,price,desc){
   document.getElementById('pageBody').innerHTML=
     '<img class="product-detail-img" src="'+image+'" onerror="this.src=\'https://placehold.co/900x900/111111/F3E8C8?text=FOTO+KAOS\'">'+
     '<h3>'+price+'</h3><p>'+desc+'</p>'+
-    '<p><b>Warna:</b> Hitam / Putih &nbsp; <b>Ukuran:</b> S / M / L / XL</p>'+
+    '<p><b>Warna:</b> Hitam / Putih &nbsp; <b>Ukuran:</b> S / M / L / XL / XXL</p>'+
     '<a class="btn btn-ivory" href="https://wa.me/6281334748004?text=Halo%20Jayco%20Jogja%20Store,%20saya%20ingin%20memesan%20'+encodeURIComponent(title)+'." target="_blank">PESAN KAOS INI VIA WHATSAPP</a>';
   document.getElementById('pageOverlay').classList.add('active');
   document.body.style.overflow='hidden';
