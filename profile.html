@@ -213,6 +213,122 @@ footer ul{list-style:none;display:grid;gap:8px}
   .cta-inner{flex-direction:column;align-items:flex-start}.cta h2{font-size:28px}
 }
 </style>
+
+<style>
+.profile-photo-space{
+  width:100%; min-height:320px; margin:0 0 55px;
+  border:2px dashed #111; background:#f5f5f5;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center; overflow:hidden;
+}
+.profile-photo-space img{
+  width:100%; height:100%; min-height:320px; object-fit:cover; display:block;
+}
+.profile-photo-label{padding:35px;color:#555;font-weight:700;letter-spacing:1px}
+@media(max-width:600px){.profile-photo-space,.profile-photo-space img{min-height:220px}}
+
+.profile-intro{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:75px;
+  align-items:center;
+}
+.profile-visual{
+  position:relative;
+  min-height:560px;
+}
+.photo-main{
+  width:78%;
+  height:500px;
+  background:#eee;
+  overflow:hidden;
+}
+.photo-main img,.photo-overlap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.photo-overlap{
+  position:absolute;
+  width:68%;
+  height:340px;
+  right:0;
+  bottom:0;
+  background:#eee;
+  border:18px solid #fff;
+  box-shadow:0 15px 35px rgba(0,0,0,.12);
+  overflow:hidden;
+}
+.photo-placeholder{
+  display:none;
+  width:100%;
+  height:100%;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:#f3f3f3;
+  color:#777;
+  font-weight:800;
+  letter-spacing:1px;
+  padding:25px;
+}
+.photo-placeholder small{font-weight:500;letter-spacing:0;line-height:1.5}
+.profile-intro-text .intro-kicker{
+  color:#777;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:2px;
+  margin-bottom:10px;
+}
+.profile-intro-text h2{
+  font-family:Georgia,"Times New Roman",serif;
+  color:#073b57;
+  font-size:clamp(38px,4vw,54px);
+  line-height:1.08;
+  margin-bottom:20px;
+}
+.profile-intro-text p{
+  font-size:16px;
+  line-height:1.85;
+  color:#777;
+  margin-bottom:15px;
+}
+.profile-intro-text .intro-lead{font-size:17px}
+.intro-highlights{
+  display:grid;
+  gap:0;
+  margin-top:28px;
+}
+.intro-highlights div{
+  display:grid;
+  grid-template-columns:45px 1fr;
+  column-gap:10px;
+  padding:13px 0;
+  border-bottom:1px solid #e5e5e5;
+}
+.intro-highlights span{
+  grid-row:span 2;
+  color:#073b57;
+  font-weight:900;
+}
+.intro-highlights strong{font-size:15px;color:#222}
+.intro-highlights small{font-size:13px;color:#888}
+
+@media(max-width:900px){
+  .profile-intro{grid-template-columns:1fr;gap:45px}
+  .profile-visual{min-height:500px}
+  .photo-main{height:440px}
+  .photo-overlap{height:290px}
+}
+@media(max-width:560px){
+  .profile-visual{min-height:390px}
+  .photo-main{width:84%;height:350px}
+  .photo-overlap{width:70%;height:230px;border-width:10px}
+  .profile-intro-text h2{font-size:38px}
+}
+
+</style>
 </head>
 
 <body>
@@ -249,8 +365,92 @@ footer ul{list-style:none;display:grid;gap:8px}
 </div>
 </header>
 
-<main><section class="light" style="padding-top:70px;min-height:560px"><div class="container">
-<div class="section-head"><div class="eyebrow">JAYCO JOGJA STORE</div><h2>Profile</h2><p>Kenali konsep dan cerita Jayco Jogja Store.</p></div><div class="review" style="max-width:850px;margin:auto"><h3>Tentang Jayco Jogja Store</h3><p>Jayco Jogja Store hadir dengan konsep kaos sederhana, warna minimalis, dan desain yang membawa pesan positif.</p><p>Kami percaya kaos bukan hanya pakaian, tetapi juga cara menyampaikan karakter, semangat, dan prinsip.</p><a class="btn btn-ivory" href="index.html#produk">LIHAT KOLEKSI KAOS</a></div>
+<main><section style="padding:80px 20px;background:#FFE100;text-align:center;color:#080808">
+<div style="max-width:900px;margin:auto">
+<p style="font-weight:800;letter-spacing:3px">TENTANG JAYCO</p>
+<h1 style="font-size:clamp(42px,7vw,76px);margin:0;font-weight:900">JAYCO JOGJA</h1>
+<p style="font-size:18px;line-height:1.8;max-width:720px;margin:20px auto 0">Sebuah perjalanan yang dibangun dari keberanian untuk berjalan, bertumbuh, dan tetap percaya pada proses.</p>
+</div></section>
+
+
+
+<section style="padding:75px 20px;background:#fff;color:#111">
+<div style="max-width:1050px;margin:auto">
+
+<div class="profile-intro">
+  <div class="profile-visual">
+    <div class="photo-main">
+      <img src="kaos-05.jpg" alt="Aktivitas dan proses Jayco"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="photo-placeholder">FOTO UTAMA<br><small>Desain JAYCO<br>Rekomendasi 1600 × 900 px</small></div>
+    </div>
+    <div class="photo-overlap">
+      <img src="kaos-06.jpg" alt="Proses dan aktivitas Jayco"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="photo-placeholder">FOTO PROSES<br><small>Desain JAYCO</small></div>
+    </div>
+  </div>
+
+  <div class="profile-intro-text">
+    <p class="intro-kicker">TENTANG KAMI</p>
+    <h2>Jayco Jogja Store</h2>
+    <p class="intro-lead"><strong>Jayco Jogja Store</strong> hadir dari sebuah keyakinan sederhana: pakaian tidak harus berhenti sebagai sesuatu yang dipakai. Ia bisa menjadi cara untuk menyampaikan pikiran, menyimpan cerita, dan membawa sebuah prinsip dalam keseharian.</p>
+    <p>Berangkat dari Yogyakarta, Jayco tumbuh dengan semangat menghadirkan kaos yang sederhana secara bentuk, namun memiliki makna yang kuat. Setiap desain dirancang sebagai pengingat tentang keberanian memilih jalan, kesabaran menjalani proses, dan rasa syukur atas setiap langkah.</p>
+
+    <div class="intro-highlights">
+      <div><span>01</span><strong>Desain Bermakna</strong><small>Pesan yang dekat dengan kehidupan.</small></div>
+      <div><span>02</span><strong>Kualitas</strong><small>Nyaman dipakai dan dibuat dengan perhatian.</small></div>
+      <div><span>03</span><strong>Dari Yogyakarta</strong><small>Tumbuh bersama pelanggan dan komunitas.</small></div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:65px;max-width:820px">
+  <p style="font-weight:800;letter-spacing:2px">SEJARAH</p>
+  <h2 style="font-size:38px;margin:0 0 22px">Berawal dari sebuah keyakinan</h2>
+  <p style="font-size:17px;line-height:1.9">Seiring perjalanan, Jayco terus berkembang dengan membawa satu prinsip: membuat sesuatu yang bukan hanya enak dilihat, tetapi juga memiliki pesan yang bisa dirasakan dan dikenakan dengan bangga.</p>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-bottom:70px">
+<div style="background:#080808;color:#fff;padding:38px">
+<p style="color:#FFE100;font-weight:800;letter-spacing:2px">VISI</p>
+<h3 style="font-size:27px;margin:0 0 15px">Menjadi brand yang punya arti</h3>
+<p style="line-height:1.8">Menjadi brand fashion lokal yang dikenal melalui desain yang berkarakter, pesan yang bermakna, dan konsistensi dalam memberikan kualitas terbaik bagi setiap orang yang memakainya.</p>
+</div>
+<div style="background:#FFE100;color:#080808;padding:38px">
+<p style="font-weight:800;letter-spacing:2px">MISI</p>
+<h3 style="font-size:27px;margin:0 0 15px">Berkarya dengan makna</h3>
+<p style="line-height:1.8">Menghadirkan produk yang nyaman dan berkualitas, menciptakan desain yang dekat dengan kehidupan, serta membangun brand lokal yang tumbuh bersama pelanggan dan komunitasnya.</p>
+</div>
+</div>
+
+
+
+
+<div style="max-width:900px;margin:auto;text-align:center">
+<p style="font-weight:800;letter-spacing:2px">FILOSOFI</p>
+<h2 style="font-size:40px;margin:0 0 20px">Jalani. Bertumbuh. Bersyukur.</h2>
+<p style="font-size:18px;line-height:1.9">Filosofi Jayco berangkat dari kehidupan itu sendiri. Tidak semua jalan mudah, tidak semua rencana berjalan sesuai keinginan, dan tidak setiap hasil datang secepat yang kita harapkan. Namun setiap langkah tetap memiliki arti.</p>
+
+<div class="profile-photo-space" style="margin:30px 0;">
+  <!-- Foto proses/aktivitas Jayco: images/profile-proses.jpg -->
+  <div class="profile-photo-label">SPACE FOTO PROSES / AKTIVITAS JAYCO<br><small>Rekomendasi: 1600 × 900 px</small></div>
+</div>
+
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:35px">
+<div style="border:2px solid #080808;padding:28px"><h3>Jalani</h3><p style="line-height:1.7">Berani melangkah dan menikmati perjalanan, apa pun jalan yang dipilih.</p></div>
+<div style="border:2px solid #080808;padding:28px"><h3>Bertumbuh</h3><p style="line-height:1.7">Menjadikan proses, kegagalan, dan pengalaman sebagai bagian dari perkembangan diri.</p></div>
+<div style="border:2px solid #080808;padding:28px"><h3>Bersyukur</h3><p style="line-height:1.7">Menghargai setiap pencapaian dan percaya bahwa setiap proses memiliki waktunya.</p></div>
+</div>
+
+<div style="margin-top:70px;background:#151515;color:#fff;padding:45px 35px;text-align:center">
+<h2 style="color:#FFE100;font-size:30px">Bukan sekadar kaos.</h2>
+<p style="font-size:18px;line-height:1.8;max-width:760px;margin:auto">Jayco ingin setiap desain menjadi bagian dari cerita pemakainya—sebuah pesan kecil yang menemani langkah, mengingatkan pada tujuan, dan memberi makna pada perjalanan.</p>
+</div>
+
 </div></section></main>
 
 <footer id="kontak">
