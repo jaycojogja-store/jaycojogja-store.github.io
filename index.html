@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="shortcut icon" href="images/favicon.png">
 <meta name="description" content="Jayco Jogja Store - Kaos dengan desain bermakna.">
 <title>Jayco Jogja Store</title>
 
@@ -212,7 +214,27 @@ footer ul{list-style:none;display:grid;gap:8px}
   section{padding:65px 0}.section-head h2{font-size:30px}
   .cta-inner{flex-direction:column;align-items:flex-start}.cta h2{font-size:28px}
 }
+
+/* LOGO */
+.brand-logo-img{width:48px;height:48px;object-fit:contain;display:block}
+.footer-logo-img{width:48px;height:48px;object-fit:contain;display:block}
+
+/* PILIH KAOSMU */
+#produk .section-head h2{color:#FFFFFF;text-shadow:0 3px 10px rgba(0,0,0,.85)}
+
+/* CATEGORY CARDS */
+.cat{cursor:pointer;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.cat:hover{transform:translateY(-5px);border-color:var(--yellow);box-shadow:0 12px 30px rgba(0,0,0,.25)}
+
+/* FLATICON */
+.social a,.contact-icon{transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease}
+.social a:hover{background:var(--yellow);color:#111;border-color:var(--yellow);transform:translateY(-4px) scale(1.05)}
+.social a i,.contact-icon i{font-size:18px}
+.contact-icon{width:34px;height:34px;min-width:34px;border:1px solid #444;border-radius:50%;display:grid;place-items:center;color:#fff}
+.contact-line{align-items:center}
+
 </style>
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css">
 </head>
 
 <body>
@@ -221,7 +243,7 @@ footer ul{list-style:none;display:grid;gap:8px}
 <header>
 <div class="container nav">
   <a href="#" class="brand" data-page="home">
-    <div class="brand-mark">J</div>
+    <img class="brand-logo-img" src="images/logo.png" alt="Logo Jayco Jogja Store">
     <div><strong class="brand-jayco">JAYCO</strong><small class="brand-jogja">JOGJA STORE</small></div>
   </a>
 
@@ -288,10 +310,10 @@ footer ul{list-style:none;display:grid;gap:8px}
     <p>Yuk, Pilih Kaos Sesuai Kategori</p>
   </div>
   <div class="categories">
-    <a class="cat" href="#produk"><div class="cat-icon">Anak</div><h3>Kaos Anak-anak</h3><span>Lihat Kaos →</span></a>
-    <a class="cat" href="#produk"><div class="cat-icon">Dewasa</div><h3>Kaos Dewasa</h3><span>Lihat Kaos →</span></a>
-    <a class="cat" href="#produk"><div class="cat-icon">Jayco</div><h3>Limited Edition Jayco</h3><span>Lihat Kaos →</span></a>
-    <a class="cat" href="#produk"><div class="cat-icon">Custom</div><h3>Kaos Design Custom</h3><span>Lihat Kaos →</span></a>
+    <a class="cat" href="kategori-anak.html"><div class="cat-icon">Anak</div><h3>Kaos Anak-anak</h3><span>Lihat Kaos →</span></a>
+    <a class="cat" href="kategori-dewasa.html"><div class="cat-icon">Dewasa</div><h3>Kaos Dewasa</h3><span>Lihat Kaos →</span></a>
+    <a class="cat" href="kategori-jayco.html"><div class="cat-icon">Jayco</div><h3>Limited Edition Jayco</h3><span>Lihat Kaos →</span></a>
+    <a class="cat" href="kategori-custom.html"><div class="cat-icon">Custom</div><h3>Kaos Design Custom</h3><span>Lihat Kaos →</span></a>
   </div>
 </div>
 </section>
@@ -307,105 +329,105 @@ footer ul{list-style:none;display:grid;gap:8px}
 
     <!-- PRODUK 1: ganti images/kaos-01.jpg -->
     <article class="product">
-      <div class="product-img"><img src="kaos-01.jpg" alt="Kaos Jangan Takut Berjalan" onerror="this.src='https://placehold.co/700x700/111111/F3E8C8?text=KAOS+01'"></div>
+      <div class="product-img"><img src="images/kaos-01.jpg" alt="Kaos Jangan Takut Berjalan" onerror="this.src='https://placehold.co/700x700/111111/F3E8C8?text=KAOS+01'"></div>
       <div class="product-body">
         <div class="tag">JAYCO 01 • HITAM</div>
         <h3>Jangan Takut Berjalan</h3>
         <p>“Tidak harus cepat. Yang penting terus berjalan.”</p>
         <div class="price">Rp 99.000</div>
         <a class="btn btn-ivory" href="https://wa.me/6281334748004?text=Halo%20Jayco%20Jogja%20Store,%20saya%20tertarik%20Kaos%20Jangan%20Takut%20Berjalan." target="_blank">PESAN VIA WA</a>
-        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('kaos-01.jpg','Jangan Takut Berjalan','Rp 99.000','Tidak harus cepat. Yang penting terus berjalan.')">LIHAT DETAIL</button>
+        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('images/kaos-01.jpg','Jangan Takut Berjalan','Rp 99.000','Tidak harus cepat. Yang penting terus berjalan.')">LIHAT DETAIL</button>
       </div>
     </article>
 
     <!-- PRODUK 2: ganti images/kaos-02.jpg -->
     <article class="product">
-      <div class="product-img"><img src="kaos-02.jpg" alt="Kaos Tetap Bertumbuh" onerror="this.src='https://placehold.co/700x700/F3E8C8/111111?text=KAOS+02'"></div>
+      <div class="product-img"><img src="images/kaos-02.jpg" alt="Kaos Tetap Bertumbuh" onerror="this.src='https://placehold.co/700x700/F3E8C8/111111?text=KAOS+02'"></div>
       <div class="product-body">
         <div class="tag">JAYCO 02 • PUTIH</div>
         <h3>Tetap Bertumbuh</h3>
         <p>“Pelan bukan berarti berhenti.”</p>
         <div class="price">Rp 99.000</div>
         <a class="btn btn-ivory" href="https://wa.me/6281334748004?text=Halo%20Jayco%20Jogja%20Store,%20saya%20tertarik%20Kaos%20Tetap%20Bertumbuh." target="_blank">PESAN VIA WA</a>
-        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('kaos-02.jpg','Tetap Bertumbuh','Rp 99.000','Pelan bukan berarti berhenti.')">LIHAT DETAIL</button>
+        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('images/kaos-02.jpg','Tetap Bertumbuh','Rp 99.000','Pelan bukan berarti berhenti.')">LIHAT DETAIL</button>
       </div>
     </article>
 
     <!-- PRODUK 3: ganti images/kaos-03.jpg -->
     <article class="product">
-      <div class="product-img"><img src="kaos-03.jpg" alt="Kaos Pilih Jalanmu" onerror="this.src='https://placehold.co/700x700/111111/F3E8C8?text=KAOS+03'"></div>
+      <div class="product-img"><img src="images/kaos-03.jpg" alt="Kaos Pilih Jalanmu" onerror="this.src='https://placehold.co/700x700/111111/F3E8C8?text=KAOS+03'"></div>
       <div class="product-body">
         <div class="tag">JAYCO 03 • HITAM</div>
         <h3>Pilih Jalanmu</h3>
         <p>“Jalanku mungkin berbeda, tapi tetap milikku.”</p>
         <div class="price">Rp 99.000</div>
         <a class="btn btn-ivory" href="https://wa.me/6281334748004?text=Halo%20Jayco%20Jogja%20Store,%20saya%20tertarik%20Kaos%20Pilih%20Jalanmu." target="_blank">PESAN VIA WA</a>
-        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('kaos-03.jpg','Pilih Jalanmu','Rp 99.000','Jalanku mungkin berbeda, tapi tetap milikku.')">LIHAT DETAIL</button>
+        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('images/kaos-03.jpg','Pilih Jalanmu','Rp 99.000','Jalanku mungkin berbeda, tapi tetap milikku.')">LIHAT DETAIL</button>
       </div>
     </article>
 
     <!-- PRODUK 4: ganti images/kaos-04.jpg -->
     <article class="product">
-      <div class="product-img"><img src="kaos-04.jpg" alt="Kaos Diam Bukan Kalah" onerror="this.src='https://placehold.co/700x700/F3E8C8/111111?text=KAOS+04'"></div>
+      <div class="product-img"><img src="images/kaos-04.jpg" alt="Kaos Diam Bukan Kalah" onerror="this.src='https://placehold.co/700x700/F3E8C8/111111?text=KAOS+04'"></div>
       <div class="product-body">
         <div class="tag">JAYCO 04 • PUTIH</div>
         <h3>Diam Bukan Kalah</h3>
         <p>“Kadang tenang adalah bentuk keberanian.”</p>
         <div class="price">Rp 99.000</div>
         <a class="btn btn-ivory" href="https://wa.me/6281334748004?text=Halo%20Jayco%20Jogja%20Store,%20saya%20tertarik%20Kaos%20Diam%20Bukan%20Kalah." target="_blank">PESAN VIA WA</a>
-        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('kaos-04.jpg','Diam Bukan Kalah','Rp 99.000','Kadang tenang adalah bentuk keberanian.')">LIHAT DETAIL</button>
+        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('images/kaos-04.jpg','Diam Bukan Kalah','Rp 99.000','Kadang tenang adalah bentuk keberanian.')">LIHAT DETAIL</button>
       </div>
     </article>
 
     <!-- PRODUK 5: ganti images/kaos-05.jpg -->
     <article class="product">
-      <div class="product-img"><img src="kaos-05.jpg" alt="Couple 1" onerror="this.src='https://placehold.co/700x700/FFFFFF/111111?text=KAOS+05'"></div>
+      <div class="product-img"><img src="images/kaos-05.jpg" alt="Couple 1" onerror="this.src='https://placehold.co/700x700/FFFFFF/111111?text=KAOS+05'"></div>
       <div class="product-body">
         <div class="tag">JAYCO 05 • HITAM PUTIH</div>
         <h3>Couple 1</h3>
         <p>“Warna Kaos Hitam dan Putih”</p>
         <div class="price">Rp 99.000</div>
         <a class="btn btn-ivory" href="https://wa.me/6281334748004?text=Halo%20Jayco%20Jogja%20Store,%20saya%20tertarik%20Kaos%20Couple%201" target="_blank">PESAN VIA WA</a>
-        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('kaos-05.jpg','Terus Melangkah','Rp 99.000','Hidup Harus Bermakna.')">LIHAT DETAIL</button>
+        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('images/kaos-05.jpg','Terus Melangkah','Rp 99.000','Hidup Harus Bermakna.')">LIHAT DETAIL</button>
       </div>
     </article>
 
     <!-- PRODUK 6: ganti images/kaos-06.jpg -->
     <article class="product">
-      <div class="product-img"><img src="kaos-06.jpg" alt="Couple 2" onerror="this.src='https://placehold.co/700x700/111111/FFFFFF?text=KAOS+06'"></div>
+      <div class="product-img"><img src="images/kaos-06.jpg" alt="Couple 2" onerror="this.src='https://placehold.co/700x700/111111/FFFFFF?text=KAOS+06'"></div>
       <div class="product-body">
         <div class="tag">JAYCO 06 • PUTIH HITAM</div>
         <h3>Couple 2</h3>
         <p>“Warna Kaos Putih dan Hitam”</p>
         <div class="price">Rp 99.000</div>
         <a class="btn btn-ivory" href="https://wa.me/6281334748004?text=Halo%20Jayco%20Jogja%20Store,%20saya%20tertarik%20Kaos%20Couple%202" target="_blank">PESAN VIA WA</a>
-        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('kaos-06.jpg','Proses Hari Ini, Hasil Nanti','Rp 99.000','Nikmati proses. Hasil akan mengikuti.')">LIHAT DETAIL</button>
+        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('images/kaos-06.jpg','Proses Hari Ini, Hasil Nanti','Rp 99.000','Nikmati proses. Hasil akan mengikuti.')">LIHAT DETAIL</button>
       </div>
     </article>
 
     <!-- PRODUK 7: ganti images/kaos-07.jpg -->
     <article class="product">
-      <div class="product-img"><img src="kaos-07.jpg" alt="Couple 3" onerror="this.src='https://placehold.co/700x700/FFFFFF/111111?text=KAOS+07'"></div>
+      <div class="product-img"><img src="images/kaos-07.jpg" alt="Couple 3" onerror="this.src='https://placehold.co/700x700/FFFFFF/111111?text=KAOS+07'"></div>
       <div class="product-body">
         <div class="tag">JAYCO 07 • PUTIH HITAM</div>
         <h3>Couple 3</h3>
         <p>“Warna Kaos Hitam dan Putih”</p>
         <div class="price">Rp 99.000</div>
         <a class="btn btn-ivory" href="https://wa.me/6281334748004?text=Halo%20Jayco%20Jogja%20Store,%20saya%20tertarik%20Kaos%20Couple%203" target="_blank">PESAN VIA WA</a>
-        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('kaos-07.jpg','Jalani, Nikmati, Syukuri','Rp 99.000','Jalani hari, nikmati perjalanan, syukuri setiap langkah.')">LIHAT DETAIL</button>
+        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('images/kaos-07.jpg','Jalani, Nikmati, Syukuri','Rp 99.000','Jalani hari, nikmati perjalanan, syukuri setiap langkah.')">LIHAT DETAIL</button>
       </div>
     </article>
 
     <!-- PRODUK 8: ganti images/kaos-08.jpg -->
     <article class="product">
-      <div class="product-img"><img src="kaos-08.jpg" alt="Couple 4" onerror="this.src='https://placehold.co/700x700/111111/FFFFFF?text=KAOS+08'"></div>
+      <div class="product-img"><img src="images/kaos-08.jpg" alt="Couple 4" onerror="this.src='https://placehold.co/700x700/111111/FFFFFF?text=KAOS+08'"></div>
       <div class="product-body">
         <div class="tag">JAYCO 08 • HITAM PUTIH</div>
         <h3>Couple 4</h3>
         <p>“Warna Kaos Hitam dan Putih”</p>
         <div class="price">Rp 99.000</div>
         <a class="btn btn-ivory" href="https://wa.me/6281334748004?text=Halo%20Jayco%20Jogja%20Store,%20saya%20tertarik%20Kaos%20Couple%204" target="_blank">PESAN VIA WA</a>
-        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('kaos-08.jpg','Tuhan Tahu yang Terbaik','Rp 99.000','Tetap melangkah. Percaya pada waktu terbaik.')">LIHAT DETAIL</button>
+        <button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="openProduct('images/kaos-08.jpg','Tuhan Tahu yang Terbaik','Rp 99.000','Tetap melangkah. Percaya pada waktu terbaik.')">LIHAT DETAIL</button>
       </div>
     </article>
 
@@ -453,12 +475,12 @@ footer ul{list-style:none;display:grid;gap:8px}
 <footer id="kontak">
 <div class="container footer-grid">
   <div>
-    <a href="#home" class="brand"><div class="brand-mark">J</div><div><strong class="brand-jayco">JAYCO</strong><small class="brand-jogja">JOGJA STORE</small></div></a>
+    <a href="#home" class="brand"><img class="brand-logo-img" src="images/logo.png" alt="Logo Jayco Jogja Store"><div><strong class="brand-jayco">JAYCO</strong><small class="brand-jogja">JOGJA STORE</small></div></a>
     <p style="margin-top:18px">Kaos dengan desain sederhana, warna hitam & putih, dan pesan yang bermakna.</p>
     <div class="social">
-      <a href="https://instagram.com/" target="_blank" aria-label="Instagram">IG</a>
-      <a href="https://facebook.com/" target="_blank" aria-label="Facebook">f</a>
-      <a href="https://tiktok.com/" target="_blank" aria-label="TikTok">♪</a>
+      <a href="https://instagram.com/" target="_blank" aria-label="Instagram" title="Instagram"><i class="fi fi-brands-instagram"></i></a>
+      <a href="https://facebook.com/" target="_blank" aria-label="Facebook" title="Facebook"><i class="fi fi-brands-facebook"></i></a>
+      <a href="https://tiktok.com/" target="_blank" aria-label="TikTok" title="TikTok"><i class="fi fi-brands-tik-tok"></i></a>
     </div>
   </div>
   <div><h3>Informasi</h3><ul>
@@ -474,10 +496,10 @@ footer ul{list-style:none;display:grid;gap:8px}
     <li><a href="#" onclick="openPage('Retur & Refund','Masukkan aturan retur dan refund kamu di sini.')">Retur & Refund</a></li>
   </ul></div>
   <div><h3>Kontak Kami</h3>
-    <div class="contact-line">📱 <span>081334748004</span></div>
-    <div class="contact-line">📷 <span>@jaycojogja.store</span></div>
-    <div class="contact-line">📍 <span>Yogyakarta, Indonesia</span></div>
-    <div class="contact-line">✉️ <span>jaycojogja.store@gmail.com</span></div>
+    <div class="contact-line"><span class="contact-icon"><i class="fi fi-rr-phone-call"></i></span><span>081334748004</span></div>
+    <div class="contact-line"><span class="contact-icon"><i class="fi fi-rr-camera"></i></span><span>@jaycojogja.store</span></div>
+    <div class="contact-line"><span class="contact-icon"><i class="fi fi-rr-marker"></i></span><span>Yogyakarta, Indonesia</span></div>
+    <div class="contact-line"><span class="contact-icon"><i class="fi fi-rr-envelope"></i></span><span>jaycojogja.store@gmail.com</span></div>
   </div>
 </div>
 <div class="bottom">© 2026 Jayco Jogja Store. All Rights Reserved.</div>
