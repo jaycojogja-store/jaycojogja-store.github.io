@@ -1,0 +1,24 @@
+CARA MENGGANTI LOGO UTAMA JAYCO
+
+1. Siapkan gambar logo baru.
+2. Format yang disarankan: PNG transparan.
+3. Ukuran yang disarankan: 500 x 500 pixel.
+4. Nama file WAJIB: logo.png
+5. Upload/copy logo.png ke folder:
+   images/
+
+Struktur folder:
+images/
+└── logo.png
+
+Jika logo.png sudah ada:
+- hapus logo.png lama, atau replace dengan logo baru.
+- jangan ubah nama file.
+
+Setelah upload ke GitHub:
+- tunggu GitHub Pages memperbarui website.
+- jika logo lama masih terlihat, lakukan refresh browser (Ctrl + F5).
+
+Logo ini digunakan untuk logo utama di pojok kiri atas dan logo di footer.
+Favicon terpisah menggunakan:
+images/favicon.png
