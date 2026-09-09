@@ -1,3 +1,12 @@
+<!--
+  CARA GANTI LOGO UTAMA:
+  1. Siapkan logo dalam format PNG transparan.
+  2. Beri nama file: logo.png
+  3. Masukkan logo.png ke folder: images/
+  4. Jika sudah ada file logo.png lama, ganti/replace dengan logo baru.
+  5. Tidak perlu mengubah kode HTML.
+  Rekomendasi ukuran: 500 x 500 px.
+-->
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -220,7 +229,7 @@ footer ul{list-style:none;display:grid;gap:8px}
 .footer-logo-img{width:48px;height:48px;object-fit:contain;display:block}
 
 /* PILIH KAOSMU */
-#produk .section-head h2{color:#FFFFFF;text-shadow:0 3px 10px rgba(0,0,0,.85)}
+#produk .section-head h2{color:#080808!important;text-shadow:none!important}
 
 /* CATEGORY CARDS */
 .cat{cursor:pointer;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
@@ -233,7 +242,64 @@ footer ul{list-style:none;display:grid;gap:8px}
 .contact-icon{width:34px;height:34px;min-width:34px;border:1px solid #444;border-radius:50%;display:grid;place-items:center;color:#fff}
 .contact-line{align-items:center}
 
+
+/* ===== PERBAIKAN LOGO & ICON KONTAK ===== */
+.brand-logo-img{
+  width:58px!important;
+  height:58px!important;
+  object-fit:contain!important;
+  display:block!important;
+}
+.footer-brand{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  gap:8px!important;
+}
+.footer-logo-img{
+  width:82px!important;
+  height:82px!important;
+  object-fit:contain!important;
+  display:block!important;
+}
+.footer-brand-text{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  line-height:1.15;
+}
+.footer-brand-text .brand-jayco{
+  font-size:22px!important;
+}
+.footer-brand-text .brand-jogja{
+  color:#FFFFFF!important;
+  font-size:10px!important;
+  letter-spacing:2px;
+}
+
+/* Pastikan ikon Phone, Instagram, Lokasi, Email tampil putih */
+.contact-icon{
+  width:36px!important;
+  min-width:36px!important;
+  height:36px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:#111111!important;
+  border:1px solid #777777!important;
+  border-radius:50%!important;
+  color:#FFFFFF!important;
+}
+.contact-icon i{
+  display:block!important;
+  color:#FFFFFF!important;
+  font-size:16px!important;
+  line-height:1!important;
+  opacity:1!important;
+}
+
 </style>
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
 <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css">
 </head>
 
@@ -243,7 +309,8 @@ footer ul{list-style:none;display:grid;gap:8px}
 <header>
 <div class="container nav">
   <a href="#" class="brand" data-page="home">
-    <img class="brand-logo-img" src="images/logo.png" alt="Logo Jayco Jogja Store">
+    <img class="brand-logo-img" src="images/logo.png" alt="Logo Jayco Jogja Store"
+onerror="this.onerror=null;this.src='logojayco.png';">
     <div><strong class="brand-jayco">JAYCO</strong><small class="brand-jogja">JOGJA STORE</small></div>
   </a>
 
@@ -475,7 +542,14 @@ footer ul{list-style:none;display:grid;gap:8px}
 <footer id="kontak">
 <div class="container footer-grid">
   <div>
-    <a href="#home" class="brand"><img class="brand-logo-img" src="logojayco.png" alt="Logo Jayco Jogja Store"><div><strong class="brand-jayco">JAYCO</strong><small class="brand-jogja">JOGJA STORE</small></div></a>
+    <a href="#home" class="footer-brand">
+  <img class="footer-logo-img" src="images/logo.png" alt="Logo Jayco Jogja Store"
+       onerror="this.onerror=null;this.src='logojayco.png';">
+  <div class="footer-brand-text">
+    <strong class="brand-jayco">JAYCO</strong>
+    <small class="brand-jogja">JOGJA STORE</small>
+  </div>
+</a>
     <p style="margin-top:18px">Kaos dengan desain sederhana, warna hitam & putih, dan pesan yang bermakna.</p>
     <div class="social">
       <a href="https://instagram.com/" target="_blank" aria-label="Instagram" title="Instagram"><i class="fi fi-brands-instagram"></i></a>
